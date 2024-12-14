@@ -25,25 +25,25 @@
 [[main]]
     identifier = "donate"
     name = "Donate"
-    url = "https://ko-fi.com/nixentric"
+    url = "https://ko-fi.com/fither"
     weight = 5
     
 # Social Media Configuration
 
 [[social]]
-    identifier = "twitter"
-    name = "Twitter"
-    url = "#"
+    identifier = "x"
+    name = "X"
+    url = "https://x.com/fither_briano"
     weight = 1
 
 [[social]]
     identifier = "instagram"
     name = "Instagram"
-    url = "#"
+    url = "https://instagram.com/fitherbroto"
     weight = 2
 
 [[social]]
     identifier = "github"
     name = "GitHub"
-    url = "#"
+    url = "https://github.com/fitherbriano"
     weight = 3
