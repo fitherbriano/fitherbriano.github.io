@@ -8,7 +8,7 @@ tags:
   - Astro
   - Web Development
 imgUrl: '/assets/astro.jpeg'
-layout: /layouts/BlogPost.astro
+layout: '../../layouts/BlogPost.astro'
 ---
 
 ## Deorum petiit ignis
