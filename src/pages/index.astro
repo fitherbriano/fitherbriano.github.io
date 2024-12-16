@@ -5,6 +5,7 @@ import MobileSocials from '@components/home/MobileSocials.astro';
 import { Pill } from '@eliancodes/brutal-ui';
 import { Button } from '@eliancodes/brutal-ui';
 import { Card } from '@eliancodes/brutal-ui';
+import SubscriptionForm from '@components/generic/SubscriptionForm.astro';
 
 const builtWith = [
   { name: 'Astro', url: 'https://astro.build/' },
@@ -48,6 +49,7 @@ const builtWith = [
             <Button target={'_self'} href='/archive/'>
               See archive &rarr;
             </Button>
+            <SubscriptionForm buttonColor="green" />
           </div>
         </Card>
       </div>
