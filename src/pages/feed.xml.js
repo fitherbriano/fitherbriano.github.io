@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const blog = await getCollection('archive');
   return rss({
-    title: 'Brutal Blog',
-    description: 'Brutal is a theme for Astro',
+    title: 'the Copy Café',
+    description: 'Brew better words, one sip at a time.',
     stylesheet: false,
     site: context.site,
     items: blog.map((post) => ({
@@ -15,6 +15,6 @@ export async function GET(context) {
       link: `/archive/${post.slug}/`,
     })),
     customData: '<language>en-us</language>',
-    canonicalUrl: 'https://brutal.elian.codes',
+    canonicalUrl: 'https://fitherbriano.github.io',
   });
 }

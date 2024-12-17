@@ -6,18 +6,14 @@ interface Props {
 import SubscriptionForm from '@components/generic/SubscriptionForm.astro';
 const navigationItems = [
   { name: 'Home', url: '/' },
+  { name: 'About', url: '/about/' },
   { name: 'The Archive', url: '/archive/' },
 ];
 
 const socialIcons = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/eliancodes/brutal',
-    icon: 'i-uil-github',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://www.twitter.com/eliancodes',
+    name: 'X',
+    url: 'https://x.com/fither_briano',
     icon: 'i-uil-twitter',
   },
   { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
@@ -29,7 +25,9 @@ const { pageTitle } = Astro.props;
 <header class='border-b-4 border-black flex justify-between p-6 items-center'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Brutal</p>
+    <p class="righteous text-2xl sm:text-2xl md:text-2xl lg:text-4xl">
+  fitherbriano
+</p>
   </a>
   <nav class='hidden md:inline-block'>
     <h2 class='hidden'>Navigation</h2>
@@ -48,13 +46,7 @@ const { pageTitle } = Astro.props;
         ))
       }
       <li>
-        <button 
-          @click="isOpen = !isOpen" 
-          class="brutal-button rounded-md text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out" 
-          type="button"
-        >
-          Join us
-        </button>
+        <button  @click="isOpen = !isOpen"  class="brutal-button rounded-sm text-lg font-medium bg-white text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-150 ease-in-out p-l-3 p-r-3"  type="button"  title="Join our Community">  Join Us</button>
       </li>
       {
         socialIcons.map((item) => (
@@ -63,7 +55,7 @@ const { pageTitle } = Astro.props;
               href={item.url}
               class='hover:text-green hover:underline transition-all duration-150 ease-in-out'
               target='_blank'
-              title={`'See @ElianCodes on ${item.name}`}
+              title={`'See Fither on ${item.name}`}
             >
               <div class:list={[item.icon, 'w-6 h-6']} />
             </a>
@@ -76,13 +68,7 @@ const { pageTitle } = Astro.props;
     <h2 class='hidden'>Mobile Navigation</h2>
     <ul>
       <li>
-        <button 
-          @click="isOpen = !isOpen" 
-          class="brutal-button rounded-md text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out" 
-          type="button"
-        >
-          Join us
-        </button>
+        <button  @click="isOpen = !isOpen"  class="brutal-button rounded-sm text-lg font-medium bg-white text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-150 ease-in-out p-l-2 p-r-2"  type="button"  title="Join our Community">  Join Us</button>
       </li>
     </ul>
   </nav>

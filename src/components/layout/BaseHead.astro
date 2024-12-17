@@ -19,10 +19,10 @@ const { title, description, ogImage } = Astro.props;
 let pageTitle = `${title} | Fither Briano`;
 
 if (Astro.url.pathname === '/archive/' || Astro.url.pathname === '/archive') {
-  pageTitle = 'Past Issues of Copy for Everybody | Fither Briano'; 
+  pageTitle = 'Past Issues of the Copy Café | Fither Briano'; 
 }
 else if (Astro.url.pathname === '/') {
-  pageTitle = 'Fither Briano | Copy for Everybody';
+  pageTitle = 'Fither Briano | the Copy Café';
 }
 else if (Astro.url.pathname === '/about/' || Astro.url.pathname === '/about') {
   pageTitle = 'Who is Fither Briano? | Fither Briano';
