@@ -15,6 +15,28 @@ if (Astro.props.ogImage === undefined) {
 }
 
 const { title, description, ogImage } = Astro.props;
+
+let pageTitle = `${title} | Fither Briano`;
+
+if (Astro.url.pathname === '/archive/' || Astro.url.pathname === '/archive') {
+  pageTitle = 'Past Issues of Copy for Everybody | Fither Briano'; 
+}
+else if (Astro.url.pathname === '/') {
+  pageTitle = 'Fither Briano | Copy for Everybody';
+}
+else if (Astro.url.pathname === '/about/' || Astro.url.pathname === '/about') {
+  pageTitle = 'Who is Fither Briano? | Fither Briano';
+}
+else if (Astro.url.pathname.startsWith('/archive/') && Astro.url.pathname !== '/archive/') {
+  pageTitle = `${title} | Fither Briano`; 
+}
+// For all other pages
+else {
+  pageTitle = `Fither Briano | ${title}`;
+}
+
+const metaTitle = pageTitle;
+
 ---
 
 <head>
@@ -25,30 +47,30 @@ const { title, description, ogImage } = Astro.props;
 
   <link
     rel='alternate'
-    href='https://brutal.elian.codes/blog.xml'
+    href='https://fitherbriano.github.io/archive.xml'
     type='application/rss+xml'
   />
 
-  <meta name='title' content={`Brutal Theme | ${title}`} />
+  <meta name='title' content={metaTitle} />
   <meta name='description' content={description} />
 
   <meta property='og:type' content='website' />
   <meta property='og:url' content={canonicalURL} />
-  <meta property='og:title' content={title} />
+  <meta property='og:title' content={metaTitle} />
   <meta property='og:description' content={description} />
   <meta property='og:image' content={ogImage} />
 
   <meta property='twitter:card' content='summary_large_image' />
   <meta property='twitter:url' content={canonicalURL} />
-  <meta property='twitter:title' content={title} />
+  <meta property='twitter:title' content={metaTitle} />
   <meta property='twitter:description' content={description} />
   <meta property='twitter:image' content={ogImage} />
 
   <link rel='canonical' href={canonicalURL} />
-  <link rel='icon' type='image/svg' href='/favicon.svg' />
+  <link rel='icon' type='image/ico' href='/favicon.ico' />
 
-  <title>Brutal Theme | {title}</title>
-
+  <title>{metaTitle}</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <ViewTransitions />
 
   <slot />

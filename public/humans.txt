@@ -1,6 +1,6 @@
-## Brutal Theme ##
+## Fither Briano ##
 
-All development & Content by Elian Van Cutsem
+Theme by Elian Van Cutsem, development and content by Fither Briano
 
-- email: hello@elian.codes
-- website: www.elian.codes
+- email: senobroto01@gmail.com
+- website: fitherbriano.github.com

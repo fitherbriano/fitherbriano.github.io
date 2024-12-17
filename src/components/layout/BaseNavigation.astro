@@ -3,6 +3,7 @@ interface Props {
   pageTitle?: string;
 }
 
+import SubscriptionForm from '@components/generic/SubscriptionForm.astro';
 const navigationItems = [
   { name: 'Home', url: '/' },
   { name: 'The Archive', url: '/archive/' },
@@ -24,7 +25,7 @@ const socialIcons = [
 
 const { pageTitle } = Astro.props;
 ---
-
+<div x-data="{ isOpen: false }" class="relative">
 <header class='border-b-4 border-black flex justify-between p-6 items-center'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home'>
@@ -46,6 +47,15 @@ const { pageTitle } = Astro.props;
           </li>
         ))
       }
+      <li>
+        <button 
+          @click="isOpen = !isOpen" 
+          class="brutal-button rounded-md text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out" 
+          type="button"
+        >
+          Join us
+        </button>
+      </li>
       {
         socialIcons.map((item) => (
           <li>
@@ -65,7 +75,23 @@ const { pageTitle } = Astro.props;
   <nav class='md:hidden flex'>
     <h2 class='hidden'>Mobile Navigation</h2>
     <ul>
-      <li><a href='/archive/'>The Archive</a></li>
+      <li>
+        <button 
+          @click="isOpen = !isOpen" 
+          class="brutal-button rounded-md text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out" 
+          type="button"
+        >
+          Join us
+        </button>
+      </li>
     </ul>
   </nav>
 </header>
+  <div 
+    x-show="isOpen" 
+    x-transition
+    class="p-4 bg-red shadow-lg border-b-4 border-black"
+  >
+    <SubscriptionForm />
+  </div>
+</div>

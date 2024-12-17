@@ -46,15 +46,17 @@ const buttonColor = Astro.props.buttonColor || colors[Math.floor(Math.random() *
   }
 </style>
 
-<form class="flex items-center gap-3">
-  <input
+<div>  
+  <form class="flex items-center gap-3">
+    <input
     type="email"
     placeholder="Email Address"
     class="brutal-input w-full rounded-md"
     required
-  />
-  <button type="submit" class="brutal-button rounded-md">
-    Subscribe
-  </button>
-</form>
-<p class="brutal-note">I will never spam or sell your info. Ever.</p>
+    />
+    <button type="submit" class="brutal-button rounded-md">
+      Subscribe
+    </button>
+  </form>
+  <p class='poppins px-4 pt-4 pb-2 text-center mx-auto'>I will never spam or sell your info. Ever.</p>
+</div>
